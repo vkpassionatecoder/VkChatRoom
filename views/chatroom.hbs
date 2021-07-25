@@ -5,25 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ChatCord App</title>
 </head>
-<body>
-  <div class="chat-container">
-    <header class="chat-header">
-      <h1><i class="fas fa-smile"></i> Vchat</h1>
-      <a href="/" class="btn">Leave Room</a>
-    </header>
-    <div class="chat-main">
-      <input type="hidden" id="username" value={{user}}>
-      <div class="chat-sidebar">
-        <h3><i class="fas fa-comments"></i> Room ID:</h3>
-        <h2 id="room-name">{{roomId}}</h2>
-        <h3><i class="fas fa-users"></i> Users</h3>
-        <ul id="users" style="min-height:184px;overflow:auto">
-        </ul>
-      </div>
-      <div class="chat-messages">
-      </div>
+
+ <body>
+    <header class="custom-navbar">
+    <div class="container-fluid">
+      <h1  style ="color:#fff"class="text-center">Welcome to Vchat</h1>
     </div>
-    <div style="position: fixed;width:100%;margin-top:-80px" class="chat-form-container">
+  </header>
+  <content>
+      <div class="chat-container">
+        <header class="chat-header">
+          <h1><i class="fas fa-smile"></i> Vchat</h1>
+          <a href="/" class="btn">Leave Room</a>
+        </header>
+        <div class="chat-main">
+        <input type="hidden" id="username" value={{user}}>
+        <div class="chat-sidebar">
+          <h3><i class="fas fa-comments"></i> Room ID:</h3>
+          <h2 id="room-name">{{roomId}}</h2>
+          <h3><i class="fas fa-users"></i> Users</h3>
+          <ul id="users" style="min-height:184px;overflow:auto">
+          </ul>
+        </div>
+        <div class="chat-messages">
+          
+        </div>
+        
+      </div> 
+        
+      </div>
+  </content>
+  <footer class="chat-form-container">
       <form id="chat-form">
         <input
           id="msg"
@@ -34,8 +46,10 @@
         />
         <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
       </form>
-    </div>
-  </div>
+    </footer>
+
+ </body>
+ 
     <script src="/socket.io/socket.io.js"></script>
     <script>
         const chatMessages = document.querySelector(".chat-messages");
@@ -85,5 +99,4 @@
      `;
    }
     </script>
-</body>
 </html>
